@@ -6,6 +6,9 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+using System.Media;
+using System.IO;
+using WMPLib;
 
 public static class GameResources
 {
@@ -58,8 +61,8 @@ public static class GameResources
 
 	private static void LoadMusic()
 	{
-		NewMusic("Background", "horrordrone.mp3");
-	}
+        NewMusic("Background", "Avengers Suite.wav");
+    }
 
 	/// <summary>
 	/// Gets a Font Loaded in the Resources
@@ -154,7 +157,7 @@ public static class GameResources
 		ShowMessage("Game loaded...", 5);
 		SwinGame.Delay(100);
 		//EndLoadingScreen(width, height);
-	}
+	}   
 
     /// <summary>
     /// Shows the loading screen.
@@ -295,9 +298,9 @@ public static class GameResources
 	}
 
 	private static void NewMusic(string musicName, string filename)
-	{
-		_Music.Add(musicName, Audio.LoadMusic(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
-	}
+    {
+        _Music.Add(musicName, Audio.LoadMusic(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
+    }
 
 	private static void FreeFonts()
 	{
