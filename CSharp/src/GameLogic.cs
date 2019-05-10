@@ -1,4 +1,3 @@
-
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -16,7 +15,8 @@ static class GameLogic
 		//Load Resources
 		GameResources.LoadResources();
 
-		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+
+        SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
 		//Game Loop
 		do {
@@ -25,8 +25,9 @@ static class GameLogic
 		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
 		SwinGame.StopMusic();
-
-		//Free Resources and Close Audio, to end the program.
-		GameResources.FreeResources();
-	}
+      
+        //Free Resources and Close Audio, to end the program.
+        GameResources.FreeResources();
+       
+    }
 }

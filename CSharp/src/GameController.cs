@@ -309,8 +309,8 @@ public static class GameController
 	public static void DrawScreen()
 	{
 		UtilityFunctions.DrawBackground();
-
-		switch (CurrentState) {
+        UtilityFunctions.DrawAnimations();
+        switch (CurrentState) {
 			case GameState.ViewingMainMenu:
 				MenuController.DrawMainMenu();
 				break;
@@ -333,9 +333,6 @@ public static class GameController
 				HighScoreController.DrawHighScores();
 				break;
 		}
-
-		UtilityFunctions.DrawAnimations();
-
 		SwinGame.RefreshScreen();
 	}
 
